@@ -14,9 +14,9 @@ jobs:
               uses: actions/cache@v1
               with:
                   path: ~/.npm
-                  key: ${{ runners.os }}-node-${{ hasFile('**/package.json') }}
-                  restore-key: |
-                      ${{ runners.os }}-node-
+                  key: ${{ runner.os }}-node-${{ hasFile('**/package.json') }}
+                  restore-keys: |
+                      ${{ runner.os }}-node-
             - name: Use NodeJS
               uses: actions/setup-node@v1
               with:
