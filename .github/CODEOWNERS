@@ -1,0 +1,4 @@
+* @Jean-Cairoli
+*.js @Jean-Cairoli
+*.yml @Jean-Cairoli
+/public/ @Jean-Cairoli
