@@ -1,0 +1,25 @@
+name: Action
+
+on: push
+
+jobs:
+    testing-action:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: ./.github/action/issues
+              id: issue
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  title: Title
+                  body: Body
+                  assignees: "Jean-Cairoli,aliala17,aliala"
+            - run: |
+                  echo ${{ steps.issue.outputs.issue }}
+            - uses: ./.github/action/hello
+              id: Hello
+              with:
+                  who-to-great: "World"
+            - run: |
+                  echo "Time: ${{ steps.hello.outputs.time  }}"
+                  echo $HELLO

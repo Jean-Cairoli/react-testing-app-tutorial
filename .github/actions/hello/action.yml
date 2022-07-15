@@ -1,0 +1,14 @@
+name: Hello World
+author: Jean Cairoli
+description: some description
+inputs:
+    whow-to-great:
+        description: "Who to greet"
+        required: true
+        default: Jean
+outputs:
+    time:
+        description: "The greeting time"
+runs:
+    using: "node12"
+    main: "dist/index.js"
